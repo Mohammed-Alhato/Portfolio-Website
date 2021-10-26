@@ -1,0 +1,23 @@
+{% extends "portfolio/base.html" %} {% load static %} {% block content %}
+
+<h1 class="text-center mt-5" id="blogdetailtitle">{{ blog.title }}</h1>
+
+<h5 class="text-center text-muted mb-5">{{ blog.date|date:'F jS Y' }}</h5>
+
+{{ blog.description|safe }}
+
+
+<div
+  style="
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+  "
+>
+  <p style="margin-top: 10px; color: #ff6601">© Mohammed Alhato, 2021</p>
+</div>
+{% endblock %}

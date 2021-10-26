@@ -1,0 +1,63 @@
+{% extends "portfolio/base.html" %} {% load static %} {% block content %}
+
+<body
+  style="background-color: #f2f2f2; text-align: center; font-family: Open Sans"
+>
+  <h1>Hello World!</h1>
+</body>
+
+<div class="row justify-content-center my-3">
+  <div class="col-5">
+    <img
+      src="{% static 'portfolio/Mo.jpg' %}"
+      class="img-fluid img-thumbnail"
+    />
+  </div>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h2 class="font-weight-bold">
+      LSE Graduate | AWS Re/Start | Cloud Practitioner
+    </h2>
+    <br />
+    <h3><b>Skills:</b></h3>
+    <h4>Linux🐧 | AWS Services ☁ | Python🐍 | Networking🌐 | SQL🗄️</h4>
+    </div>
+</div>
+
+<h2 class="mt-5">Portfolio</h2>
+<hr />
+<div class="row">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6">
+    {% if project.url %}
+    <a href="{{ project.url }}">
+      <img src="{{ project.image.url }}" class="img-fluid mb-2" />
+    </a>
+    {% else %}
+
+    <img src="{{ project.image.url }}" class="img-fluid mb-2" />
+    {% endif %}
+    <h3>{{ project.title }}</h3>
+    <p style="margin-bottom: 55px">{{ project.description }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+
+<div
+  style="
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    color: black;
+    text-align: center;
+  "
+>
+  <p style="margin-top: 10px; color: #ff6601">© Mohammed Alhato, 2021</p>
+</div>
+
+{% endblock %}
